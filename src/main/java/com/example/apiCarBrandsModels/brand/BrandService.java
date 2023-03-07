@@ -26,6 +26,10 @@ public class BrandService {
         return brandRepository.findById(brandId).orElse(null);
     }
 
+    public Brand readBrand(String brandName) {
+        return brandRepository.findByName(brandName);
+    }
+
     public void changeBrand(Brand brand) {
         Brand changedBrand = readBrand(brand.getId());
         changedBrand.setName(brand.getName());
